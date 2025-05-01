@@ -21,6 +21,7 @@ server.use(cors());
 server.use('/allapi', allRouters);
 
 server.use('/about-page', express.static('./src/uploadimages'));
+server.use('/author-details', express.static('./src/uploadimages'));
 
 // create server with .env file
 server.listen(process.env.PORT, ()=>{

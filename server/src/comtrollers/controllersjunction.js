@@ -1,11 +1,26 @@
 //====================Admin Penal Controllers========================
+// Admin 
+const {registerAdminController } = require("./adminpanelcontrollers/admincontroller");
+
+
 // About Page Controllers
-     const { addAboutPageController, viewAboutPageController, singleDeleteController } = require("./adminpanelcontrollers/aboutpagecontrollers");
+const { addAboutController, viewAboutController, DeleteController,    readEditAboutController, } = require("./adminpanelcontrollers/aboutcontrollers");
+
+// Author Details Page
+const { addAuthorDetailsController, viewAuthoeDetailsController, singleAuthorDeleteController,  } = require("./adminpanelcontrollers/authordetailscontroller");
 
 module.exports = {
 // =============Admin Penal Controllers =====================
-// About Page Controllers
-     addAboutPageController,
-     viewAboutPageController,
-     singleDeleteController
+// ========Admin 
+registerAdminController,
+
+// ======== About Page Controllers ===============
+     addAboutController,
+     viewAboutController,
+     DeleteController,
+     readEditAboutController,
+// ======= Author Details Controllers ==============
+     addAuthorDetailsController,
+     viewAuthoeDetailsController,
+     singleAuthorDeleteController
 }

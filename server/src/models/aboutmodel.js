@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
-const AboutPageSchema = new mongoose.Schema({
+const AboutSchema = new mongoose.Schema({
      thumbnail : String,
+     titles : String,
      description: String,
      ourvision:String,
      ourvalues:String,
@@ -12,15 +13,15 @@ const AboutPageSchema = new mongoose.Schema({
      }
 });
 
-AboutPageSchema.pre('save', function(){
+AboutSchema.pre('save', function(){
      this.created_at = new Date();
 });
 
-AboutPageSchema.pre('updateOne', function(){
+AboutSchema.pre('updateOne', function(){
      this.created_at = new Date();
 });
 
 // collection name in database
-const AboutPageModel = mongoose.model('AboutPageDetails', AboutPageSchema);
+const AboutModel = mongoose.model('AboutDetails', AboutSchema);
 
-module.exports = AboutPageModel;
+module.exports = AboutModel;

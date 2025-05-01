@@ -4,10 +4,12 @@ const express = require('express');
 const adminPanelRouters = express.Router();
 const websiteRouters = express.Router();
 
-const AboutPageRouter = require('./adminpanelrouter/aboutpagerouter');
+const AboutRouter = require('./adminpanelrouter/aboutpagerouter');
+const AuthorDetailsRouter = require('./adminpanelrouter/authordetailsrouter');
 
 
-adminPanelRouters.use('/aboutpage', AboutPageRouter)
+adminPanelRouters.use('/about', AboutRouter)
+adminPanelRouters.use('/authordetailpage', AuthorDetailsRouter)
 
 
 //export all adminPanelRouters, websiteRouters

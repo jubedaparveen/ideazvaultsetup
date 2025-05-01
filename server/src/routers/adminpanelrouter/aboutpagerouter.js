@@ -1,19 +1,25 @@
 const express = require('express');
 const multer = require('multer');
 const multerupload = require('../../middleware/multer');
-const AboutPageRouter = express.Router();
+const AboutRouter = express.Router();
+
 
 // ====================== Admin Penal ==========================================
-// ====================== aboutpage ============================================
+// ====================== About Page ==========================================
 const { 
-     addAboutPageController, 
-     viewAboutPageController, 
-     singleDeleteController } = require('../../comtrollers/controllersjunction');
-AboutPageRouter.post('/addaboutpage', multerupload, addAboutPageController);
-AboutPageRouter.get('/viewaboutpage', viewAboutPageController)
-AboutPageRouter.delete('/delete/:id', singleDeleteController)
-
-// ====================== about page ===========================================
+     addAboutController,
+     viewAboutController,
+     DeleteController,
+     readEditAboutController, 
+} = require('../../comtrollers/controllersjunction');
 
 
-module.exports = AboutPageRouter;
+AboutRouter.post('/addabout', multerupload, addAboutController);
+AboutRouter.get('/viewabout', viewAboutController)
+AboutRouter.delete('/delete/:_id',  DeleteController)
+AboutRouter.get('/readeditAbout/:_id', readEditAboutController)
+
+
+
+
+module.exports = AboutRouter;
